@@ -23,3 +23,10 @@ Go to view -> Command Pallette
    In terminal:
    cd app     
    python manage.py runserver
+
+    --------------------------------------------------
+   
+   Kevin Startup
+
+   py -3 -m venv .venv
+.venv\scripts\activate
