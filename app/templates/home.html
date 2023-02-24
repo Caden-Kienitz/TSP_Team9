@@ -1,0 +1,75 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<!-- 
+add content in the this fashion
+this is a bootstrap grid layout to keep everything looking good for now
+https://getbootstrap.com/docs/4.0/layout/grid/
+-->
+<!--
+  HTML help
+  https://www.w3schools.com/html/html_comments.asp
+-->
+
+<div id="carouselImageSlideshow" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselImageSlideshow" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselImageSlideshow" data-slide-to="1"></li>
+    <li data-target="#carouselImageSlideshow" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://tclpcap.org/wp-content/uploads/2022/09/Downtown-Traverse-City-Aerial-2000-px.jpg" alt="First slide" style="max-height: 45vh; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static '/img/240457323_4206549042732947_713686792719391782_n.png' %}" alt="Second slide" style="max-height: 45vh; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static '/img/313343695_553843816745032_5622586600286189184_n.jpg' %}" alt="Third slide" style="max-height: 45vh; object-fit: cover;">
+    </div>
+  </div>
+  
+  <a class="carousel-control-prev" href="#carouselImageSlideshow" role="button" data-slide="prev">
+    <span><i class="fa fa-chevron-circle-left" aria-hidden="true" style = "font-size:50px"></i></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselImageSlideshow" role="button" data-slide="next">
+    <span><i class="fa fa-chevron-circle-right" aria-hidden="true" style = "font-size:50px"></i></span>
+    <span class="sr-only">Next</span>
+ </a>
+</div> 
+<!-- height is a bit tall on longer resolutions, could be fixed either with left/right margins or image height cutoffs -->
+
+<!--Better carousel control icons once fontAwesome is available-->
+<!--<i class="fa-duotone fa-square-right"></i>-->
+<!--<i class="fa-duotone fa-square-left"></i>-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Heading</h3>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, repellat quasi dolorum amet sint libero neque asperiores sit nobis vitae recusandae suscipit maxime veniam? Odit harum, obcaecati magnam temporibus sed saepe rerum distinctio nemo impedit in quam exercitationem cum qui fuga possimus alias non eos vitae voluptate illum necessitatibus. Nulla fugit nesciunt, minima quam, non sit placeat error deleniti ab omnis nemo? Doloribus, vero neque. Commodi magnam ut quisquam dicta temporibus dolor ullam nihil cumque.
+    </div>
+    <div class="col-sm">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste aliquam nostrum eaque at sed eos odio quisquam earum, adipisci omnis, ratione deleniti, tempore doloremque maxime. Officiis quidem suscipit illum enim similique doloremque ullam quam sapiente, assumenda dolorem dignissimos accusamus nostrum ratione reprehenderit corrupti. Magni sint quibusdam doloribus, assumenda eius facere odio sunt, quasi ullam cupiditate et earum eaque error corporis, rem voluptatum laborum delectus quas nisi. Quibusdam, voluptates eveniet? Atque ipsum consequatur ad beatae nostrum.</p>
+    </div>
+    <div class="col-sm">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veniam! Quam, magnam. Est tempora molestias a ab in inventore nam possimus sed debitis ex sit excepturi molestiae, minima quaerat maxime saepe error magnam. Aperiam modi qui officiis laborum soluta. Quae tenetur iure unde laboriosam asperiores, aut nemo reiciendis nisi sunt ipsa eaque odio numquam at quis fuga inventore voluptatibus doloribus neque aliquam rerum est harum quaerat praesentium corrupti. Nulla sit saepe voluptate iste, laborum ex.</p>
+    </div>
+  </div>
+  </div>
+  <!--Live Twitter Feed-->
+  <div class="container text-center my-4">
+    <h3>Twitter Feed</h3>
+    <div class="d-flex justify-content-center my-4">
+      <a class="twitter-timeline" data-width="700" data-height="425" href="https://twitter.com/TCLP_News?ref_src=twsrc%5Etfw">Tweets by TCLP_News</a> 
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+{% endblock %}
