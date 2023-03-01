@@ -1,0 +1,32 @@
+@startuml
+!theme vibrant
+skinparam actorStyle awesome
+package ATM{
+usecase "Transaction"
+usecase "Authentication"
+usecase "Check Balance"
+usecase "Deposit Funds"
+usecase "Withdraw Cash"
+usecase "Transfer Money"
+usecase "Read Instructions"
+usecase "Entered Invalid PIN"
+usecase "Maintenance"
+usecase "Update Manual"
+}
+actor "Customer" as c
+c -- (Authentication)
+(Authentication) ..> (Transaction) : << include >>
+(Transaction) ..> (Entered Invalid PIN) : << extend >>
+(Read Instructions) ..> (Transaction) : << extend >>
+(Withdraw Cash) ..> (Transaction) : << extend >>
+(Transfer Money) ..> (Transaction) : << extend >>
+(Check Balance) ..> (Transaction) : << extend >>
+(Deposit Funds) ..> (Transaction) : << extend >>
+(Maintenance) ..> (Read Instructions) : << include >>
+actor "ATM Technician" as a
+actor "Bank" as b
+
+b -- (Transaction)
+a -- (Maintenance)
+a -- (Update Manual)
+@enduml
