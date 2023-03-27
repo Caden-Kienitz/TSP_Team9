@@ -1,7 +1,5 @@
 from django.forms import ModelForm
+from django import forms
 
-
-class TranslationForm(ModelForm):
-    class Meta:
-        #model = Translation
-        fields = ['english', 'ipa']
+class nameForm(forms.Form):
+    your_name = forms.CharField(label="your phrase", max_length=100)

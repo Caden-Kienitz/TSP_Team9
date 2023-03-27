@@ -8,17 +8,18 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <form>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Type English here...   ">
-        <div class="input-btn">
-          <button id="run-script-btn">Translate</button>
-          <input type="text" id="myInput" placeholder = "Word in phonetics:" readonly>
-          <div id="output"></div>
-        </div>
-      </div>
-    </form>
-  </div>
+  <!-- the form tag will send the data to the path 'script/' -->
+  <form action = "script/" method = "post">
+    <label for = "/"> Enter phrase to be translated:  </label>
+    <input type = "text" name = "your phrase" id = "your phrase" maxlength ="100"/>
+    {% csrf_token %}
+    {{ form }}
+    <!-- The input tag will allow the user to submit the form -->
+    <input type = "submit" value = "Submit" />
+  </form>
+  <!-- The form_data.address variable will display the data that is entered into the form -->
+  {{ form_data.address }}
+</div>
   <div class="row">
     <div class="col-sm">
       <h3>Heading</h3>
@@ -34,11 +35,24 @@
     </div>
   </div>
   </div>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/your/url/name.php"); 
+  xhr.onload = function(event){ 
+      alert("Success, server responded with: " + event.target.response); // raw response
+  }; 
+  // or onerror, onabort
+  var formData = new FormData(document.getElementById("myForm")); 
+  xhr.send(formData);
 
+</script>
+
+
+<!--
   <script>
     // using jQuery to make AJAX request
     // ajax.js
-
+    
 $(document).ready(function() {
   $("#myButton").click(function() {
     var userInput = $("#myInput").val();
@@ -58,19 +72,6 @@ $(document).ready(function() {
     });
   });
 });
-
-  </script>
-  <!--
-  <script>
-    // using jQuery to make AJAX request
-    $('#run-script-btn').click(function() {
-        $.ajax({
-            url: '{% url "run_script" %}',
-            success: function(response) {
-                alert(response.message);
-            }
-        });
-    });
 </script>
 -->
 {% endblock %}
