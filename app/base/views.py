@@ -8,3 +8,5 @@ def help(request):
     return render(request,"help.html")
 def contact(request):
     return render(request,"contact.html")
+def registration(request):
+    return render(request,"registration.html")
