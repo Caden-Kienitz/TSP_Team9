@@ -1,0 +1,35 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block styles %}
+<style>
+  .container {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding: 20px; /* added padding to the container */
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4 mb-4"> <!-- added mt-4 and mb-4 classes to add margin to the top and bottom of the container -->
+  <div class="row justify-content-center">
+    <div class="col-md-6"> <!-- removed text-center class as it's not needed with the new container margins -->
+      <form>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Type username here...">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Type password here...">
+        </div>
+        <div class="input-btn">
+          <button class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
