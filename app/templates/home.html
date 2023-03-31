@@ -8,15 +8,20 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <form>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Type text here...   ">
-        <div class="input-btn">
-          <button>Translate</button>
-        </div>
-      </div>
-    </form>
+  <!-- the form tag will send the data to the path '/' -->
+  <form action = "/" method = "post">
+    <label for = "/"> Enter phrase to be translated:  </label>
+    <input type = "text" name = "your phrase" id = "your phrase" maxlength ="100"/>
+    {% csrf_token %}
+    {{ form }}
+    <!-- The input tag will allow the user to submit the form -->
+    <input type = "submit" value = "Submit" />
+  </form>
+  <!-- The form_data.address variable will display the data that is entered into the form -->
+  <div id="ipa">
+  {{ form_data.address }}
   </div>
+</div>
   <div class="row">
     <div class="col-sm">
       <h3>Heading</h3>
@@ -32,5 +37,43 @@
     </div>
   </div>
   </div>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/your/url/name.php"); 
+  xhr.onload = function(event){ 
+      alert("Success, server responded with: " + event.target.response); // raw response
+  }; 
+  // or onerror, onabort
+  var formData = new FormData(document.getElementById("myForm")); 
+  xhr.send(formData);
 
+</script>
+
+
+<!--
+  <script>
+    // using jQuery to make AJAX request
+    // ajax.js
+    
+$(document).ready(function() {
+  $("#myButton").click(function() {
+    var userInput = $("#myInput").val();
+    $.ajax({
+      url: "/run-python-script/",
+      type: "POST",
+      data: {
+        user_input: userInput
+      },
+      dataType: "json",
+      success: function(data) {
+        $("#output").text(data.output);
+      },
+      error: function(xhr, errmsg, err) {
+        console.log(xhr.status + ": " + xhr.responseText);
+      }
+    });
+  });
+});
+</script>
+-->
 {% endblock %}

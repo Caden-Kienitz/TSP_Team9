@@ -1,7 +1,32 @@
 from django.shortcuts import render
+from .forms import nameForm
+import subprocess
+
+def getName(request):
+    if request.method == 'POST':
+        form = nameForm(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            
+            return HttpResponseRedirect('/')
+    else:
+        form = nameForm()
+    return render(request, 'home.html', {'form': form})
+
+#takes the POST data from the form and passes it to the convert function   
+def home(request):
+    form = nameForm()
+    if request.method == 'POST':   
+        info = request.POST['your phrase']
+        # passing the POST data for 'info' to the convert function;
+        output = convert(info)
+        # returning the output as a JSON object
+        return JsonResponse({'output': output}) 
+    # if the request is not a POST, then return the home page
 
 def home(request):
     return render(request, "home.html")
+
 def login(request):
     return render(request, "login.html")
 def help(request):
