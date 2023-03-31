@@ -9,8 +9,8 @@
 <div class="container">
   <div class="row justify-content-center">
   <!-- the form tag will send the data to the path '/' -->
-  <form action = "/" method = "post">
-    <label for = "/"> Enter phrase to be translated:  </label>
+  <form action = "" method = "post">
+    <label for = ""> Enter phrase to be translated:  </label>
     <input type = "text" name = "your phrase" id = "your phrase" maxlength ="100"/>
     {% csrf_token %}
     {{ form }}
