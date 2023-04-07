@@ -5,6 +5,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import nameForm
 
+
+
 #takes the POST data from the form and passes it to the convert function   
 def home(request):
     form = nameForm()
@@ -32,7 +34,7 @@ def home(request):
     return render(request, "home.html")
 
 def login(request):
-    return render(request, "login.html")
+    return render(request, "Login.html")
 def help(request):
     return render(request,"help.html")
 def contact(request):
