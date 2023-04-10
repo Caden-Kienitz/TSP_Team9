@@ -5,92 +5,72 @@
 {% endblock %}
 
 {% block body %}
-<!--
 <div class="container">
-  <div class="row justify-content-center">
-  <form action = "" method = "post">
-    <label for = ""> Enter phrase to be translated:  </label>
-    <input type = "text" name = "your phrase" id = "your phrase" maxlength ="100"/>
-    {% csrf_token %}
-    {{ form }}
-    <input type = "submit" value = "Submit" />
-  </form>
-  <div id="ipa">
-  {{ form_data.address }}
-  </div>
-</div>
--->
-  
-  </div>
-  <div class="container">
-    <!--
-        <div class="mt-1">
-          <h1>English IPA Translator</h1>
-          <h4>paragraph -> IPA</h4>
-          <hr>
-        </div>
-      -->
-        <div class="row">
-          <div class="col-md-6">
-              <div class="form-group">
-                <label>English:</label>
-                <textarea class="form-control" rows="10" id="cWords_tBox" onfocusin="this.select();" onkeyup="update_result()" placeholder="Input some English words. ">Please enter the words you would like to translate into The International Phonetic Alphabet (IPA).
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>English:</label>
+        <textarea class="form-control" rows="10" id="cWords_tBox" onfocusin="this.select();" onkeyup="update_result()"
+          placeholder="Input some English words. ">Please enter the words you would like to translate into The International Phonetic Alphabet (IPA).
                 </textarea>
-            </div>
-          </div>
-          <div class="col-md-6">
-  
-            <div class="form-group">
-              <label >IPA:</label>
-              <textarea class="form-control" rows="10" id="IPA_tBox" disabled="true"></textarea>
-            </div>
-  
-          </div>
-        </div>
-        <div class="row">		
-        <hr style="width:100%;" />
-          <div class="mt-1">
-              <strong>Settings</strong>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <label>Select US or British Pronounciation:  </label>
-            <br>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="IPA_US" value="option2" checked="checked" onchange="update_result()"> US
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="IPA_UK" value="option1" onchange="update_result()"> UK
-              </label>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-check ">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" checked="checked" onchange="update_result()" id="wf_c_words">
-                Include the English word in the IPA translation
-              </label>
-            </div>
-          </div>
-        </div>
-  
-        <br>
-        <h3>Example Translations</h3>
-        <div class="row">
-        <div class="col-sm">
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      <div class="form-group">
+        <label>IPA:</label>
+        <textarea class="form-control" rows="10" id="IPA_tBox" disabled="true"></textarea>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <hr style="width:100%;" />
+    <div class="mt-1">
+      <strong>Settings</strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label>Select US or British Pronounciation: </label>
+      <br>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="IPA_US" value="option2"
+            checked="checked" onchange="update_result()"> US
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="IPA_UK" value="option1"
+            onchange="update_result()"> UK
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-check ">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" checked="checked" onchange="update_result()" id="wf_c_words">
+          Include the English word in the IPA translation
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h3>Example Translations</h3>
+  <div class="row">
+    <div class="col-sm">
       <img src="https://ichef.bbci.co.uk/images/ic/480xn/p05lqc4f.jpg" width="480" height="270">
-      <p>firework = [ˈfaɪɹˌwɝk]</p> 
+      <p>firework = [ˈfaɪɹˌwɝk]</p>
     </div>
     <div class="col-sm">
       <img src="https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png" width="250" height="250">
       <p>apple = [ˈæpəɫ] </p>
     </div>
     <div class="col-sm">
-      <img src="https://www.gardeningknowhow.com/wp-content/uploads/2021/07/strawberry-400x533.jpg" width="200" height="266">
+      <img src="https://www.gardeningknowhow.com/wp-content/uploads/2021/07/strawberry-400x533.jpg" width="200"
+        height="266">
       <p>strawberry = [ˈstɹɔˌbɛɹi] </p>
     </div>
   </div>
@@ -98,21 +78,13 @@
     <div class="col-sm">
       <h3>Non-English Resources</h3>
       <ul>
-      <p>International Phonetic Association: <a href="https://www.internationalphoneticassociation.org/content/links-phonetics-resources">Link</a></p>
+        <p>International Phonetic Association: <a
+            href="https://www.internationalphoneticassociation.org/content/links-phonetics-resources">Link</a></p>
       </ul>
     </div>
   </div>
-      </div>   
-
+</div>
 <div id="demo"></div>
-    <!--{% static '/img/IPA.png' %}-->
-    <!--let data_file = {% static '/en_US.json' %};-->
-    <!--let data_file = {'/en_US.json'};-->
-        <!--{% static '/img/IPA.png' %}-->
-    <!--let data_file = {% static '/en_US.json' %};-->
-    <!--let data_file = {'/en_US.json'};-->
-    <!--let data_file = '../static/en_US.json';-->
-    <!--<script src="/static/main.js"></script>-->
-    <script src="static/main.js"></script>
-    
+<script src="static/main.js"></script>
+
 {% endblock %}
