@@ -5,6 +5,8 @@ from django.contrib.auth.views import LoginView
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
+from django.urls import path
+from .views import SignUpView
 from django.urls import path, include
 urlpatterns = [
     path("", views.home, name="home"),
@@ -14,6 +16,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('signup/', SignUpView.as_view(template_name = 'registration/signup.html'), name='signup')
 ]
 
     
