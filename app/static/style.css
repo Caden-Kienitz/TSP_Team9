@@ -3,3 +3,9 @@
     font-weight: 300;
     font-size: 34px;
   }
+
+  .container {
+    background-color: #dae4e7;
+    margin: 20px;
+    padding: 20px;
+  }
