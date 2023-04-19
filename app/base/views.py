@@ -4,6 +4,10 @@ from eng_to_ipa import convert
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import nameForm
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
+
 
 
 
@@ -34,12 +38,16 @@ def home(request):
     return render(request, "home.html")
 
 def login(request):
-    return render(request, "Login.html")
+    return render(request, "login.html")
 def help(request):
     return render(request,"help.html")
 def contact(request):
     return render(request,"contact.html")
 def registration(request):
     return render(request,"registration.html")
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
 
 
