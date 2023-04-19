@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <style>
+    .signup-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    .signup-form button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .signup-form button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h2>Register</h2>
+    <form method="post" class="signup-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+  </body>
+</html>
