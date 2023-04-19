@@ -3,7 +3,6 @@
 {% block title %}
 <title>Home</title>
 {% endblock %}
-
 {% block body %}
 <div class="container">
   <div class="row">
@@ -24,6 +23,7 @@
 
     </div>
   </div>
+  <!--
   <div class="row">
     <hr style="width:100%;" />
     <div class="mt-1">
@@ -56,31 +56,36 @@
       </div>
     </div>
   </div>
+-->
 
   <br>
   <h3>Example Translations</h3>
   <div class="row">
     <div class="col-sm">
-      <img src="https://ichef.bbci.co.uk/images/ic/480xn/p05lqc4f.jpg" width="480" height="270">
+      <img src="https://ichef.bbci.co.uk/images/ic/480xn/p05lqc4f.jpg" class="img-fluid">
       <p>firework = [ˈfaɪɹˌwɝk]</p>
     </div>
     <div class="col-sm">
-      <img src="https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png" width="250" height="250">
+      <img src="https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png" class="img-fluid">
       <p>apple = [ˈæpəɫ] </p>
     </div>
     <div class="col-sm">
-      <img src="https://www.gardeningknowhow.com/wp-content/uploads/2021/07/strawberry-400x533.jpg" width="200"
-        height="266">
+      <img src="https://www.gardeningknowhow.com/wp-content/uploads/2021/07/strawberry-400x533.jpg" class="img-fluid">
       <p>strawberry = [ˈstɹɔˌbɛɹi] </p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
-      <h3>Non-English Resources</h3>
-      <ul>
-        <p>International Phonetic Association: <a
-            href="https://www.internationalphoneticassociation.org/content/links-phonetics-resources">Link</a></p>
-      </ul>
+      <h3 class="text-center">Non-English Resources</h3>
+      <hr>
+      <div class="text-center">
+        <p>International Phonetics Association</p>
+      </div>
+      <div class="container d-flex align-items-center justify-content-center">
+        <input style="inline-block" type="submit" target="blank" onclick="location.href='https://www.internationalphoneticassociation.org/content/links-phonetics-resources' " 
+            value="International Phonetics Alphabet"></input>
+      </div>
+            
     </div>
   </div>
 </div>
